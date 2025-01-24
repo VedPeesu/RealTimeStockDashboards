@@ -6,3 +6,5 @@ Developed using Python, Flask, Java, and a finance API, this project gives users
 - Automated economic reports emailing, including GDP, QFR, and ECI, to notify users.
 - Currency conversion with automated rate updates and ease of access to users.
 - A customized and detailed user website
+
+# Installation
