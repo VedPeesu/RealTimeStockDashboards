@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Stock Dashboard</h1>
+    
+    <form action="/" method="post">
+        <label for="ticker">Ticker Symbol:</label>
+        <input type="text" id="ticker" name="ticker">
+        <button type="submit">Get Stock Data</button>
+    </form>
+    
+    {% if stock_data %}
+    <h2>Stock Data for {{ stock_data.ticker }}</h2>
+    <p>Current Price: {{ stock_data.currentPrice }}</p>
+    <p>Open Price: {{ stock_data.openPrice }}</p>
+    {% endif %}
+    
+    <form action="/convert_price" method="post">
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price">
+        
+        <label for="rate">Conversion Rate:</label>
+        <select id="rate" name="rate">
+            {% for currency, rate in rates.items() %}
+            <option value="{{ rate }}">{{ currency }}</option>
+            {% endfor %}
+        </select>
+        
+        <button type="submit">Convert Price</button>
+    </form>
+    
+    {% if convertedPrice %}
+    <h2>Converted Price: {{ convertedPrice }}</h2>
+    {% endif %}
+    
+    {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
