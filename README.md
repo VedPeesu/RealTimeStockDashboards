@@ -43,3 +43,9 @@ Developed using Python, Flask, Java, and a finance API, this project gives users
    spring.mail.properties.mail.smtp.auth=true
    spring.mail.properties.mail.smtp.starttls.enable=true
    ```
+
+5. Run the application
+   ```bash
+   flask run --host=0.0.0.0
+   ```
+   
