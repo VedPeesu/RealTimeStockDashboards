@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Dashboard</title>
-    <!-- Google Fonts Link -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -16,7 +15,49 @@
     </header>
 
     <main>
-        <!-- Main Content (Unchanged) -->
+        <section class="form-section">
+            <form action="/" method="post">
+                <label for="ticker">Ticker Symbol:</label>
+                <input type="text" id="ticker" name="ticker" placeholder="Enter ticker symbol">
+                <button type="submit">Get Stock Data</button>
+            </form>
+        </section>
+
+        {% if stock_data %}
+        <section class="stock-card">
+            <h2>Stock Data for {{ stock_data.ticker }}</h2>
+            <p><strong>Current Price:</strong> {{ stock_data.currentPrice }}</p>
+            <p><strong>Open Price:</strong> {{ stock_data.openPrice }}</p>
+        </section>
+        {% endif %}
+
+        <section class="form-section">
+            <form action="/convert_price" method="post">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" placeholder="Enter price">
+
+                <label for="rate">Conversion Rate:</label>
+                <select id="rate" name="rate">
+                    {% for currency, rate in rates.items() %}
+                    <option value="{{ rate }}">{{ currency }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Convert Price</button>
+            </form>
+        </section>
+
+        {% if convertedPrice %}
+        <section id="conversionResult">
+            <h2>Converted Price: {{ convertedPrice }}</h2>
+        </section>
+        {% endif %}
+
+        {% if error %}
+        <section id="error">
+            <p>{{ error }}</p>
+        </section>
+        {% endif %}
     </main>
 </body>
 </html>
