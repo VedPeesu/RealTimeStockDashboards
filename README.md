@@ -24,7 +24,7 @@ Developed using Python, Flask, Java, and a finance API, this project gives users
 - Generate your own News API key
 
 
-3. Set up Gmail credentials
+3. Set up Gmail credentials and API credentials
    ```bash
    apiKey = "NEWS_API_KEY";
    apiUrl = "https://newsapi.org/v2/everything";
