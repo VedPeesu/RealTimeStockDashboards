@@ -1,124 +1,32 @@
+/* General Styles */
 body {
-    font-family: 'Times New Roman', sans-serif;
-    background-color: #ddd;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
     color: #333;
 }
 
-h1 {
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    color: #333;
-    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-    color: #555;
-    margin-top: 30px;
-    text-align: center;
+header .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-form {
-    text-align: center;
-    margin: 20px;
-}
-
-input[type="text"],
-input[type="number"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 200px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-p {
-    text-align: center;
-    margin: 10px 0;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    padding: 10px;
-    background-color: #fff;
-    margin: 10px auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 90%;
-    max-width: 600px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #007BFF;
-    transition: color 0.3s ease;
-}
-
-ul li a:hover {
-    color: #0056b3;
-}
-
-#conversionForm {
-    text-align: center;
-    margin: 20px;
-}
-
-#conversionResult {
-    text-align: center;
-    margin: 20px;
-    font-weight: bold;
-}
-
-#error {
-    color: red;
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background-color: #007BFF;
-    color: #fff;
-}
-
-.stock-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.stock-card h3 {
-    margin-top: 0;
-    color: #007BFF;
-}
-
-.stock-card p {
-    margin: 10px 0;
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif; 
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
